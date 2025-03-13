@@ -1,0 +1,13 @@
+<h1>Tareas</h1>
+
+<div *ngIf="tasks.length > 0; else noTasks">
+  <ul>
+    <li *ngFor="let task of tasks">
+      {{ task.titulo }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noTasks>
+  <p>No hay tareas disponibles.</p>
+</ng-template>

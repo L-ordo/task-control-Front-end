@@ -1,0 +1,7 @@
+app-navbar {
+  width: 250px; /* Ajusta el ancho del sidebar */
+}
+
+.flex-grow-1 {
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}

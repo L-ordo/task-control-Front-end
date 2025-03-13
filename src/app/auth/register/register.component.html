@@ -1,0 +1,32 @@
+<div class="">
+  <form (ngSubmit)="register()">
+
+    <div>
+      <label for="name">Nombre</label>
+      <input type="name" name="name" id="name"
+      [(ngModel)] = "nombre"
+      required>
+    </div>
+
+    <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email"
+    [(ngModel)] = "correo"
+    required>
+  </div>
+
+
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password"
+    [(ngModel)]="password">
+  </div>
+
+  <button
+  type="submit"
+  >
+  Registrar
+</button>
+
+  </form>
+</div>

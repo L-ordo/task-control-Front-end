@@ -1,0 +1,31 @@
+<form (ngSubmit)="createTask()">
+
+  <div>
+    <label for="titulo">Nombre de la tarea</label>
+    <input
+    id="titulo"
+    type="text"
+    [(ngModel)]="titulo"
+    name = "titulo"
+    required
+    placeholder="Escriba el nombre de la tarea"
+    >
+  </div>
+
+  <div>
+    <label for="titulo">Descripcion de la tarea</label>
+    <input
+    id="descripcion"
+    type="text"
+    [(ngModel)]="descripcion"
+    name = "descripcion"
+    required
+    placeholder="Escriba la descripcion de su tarea"
+    >
+  </div>
+
+  <button
+  type="submit"
+  >Crear</button>
+
+</form>
