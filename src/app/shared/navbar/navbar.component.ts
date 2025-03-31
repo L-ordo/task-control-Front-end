@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../service/auth.service';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-navbar',
@@ -11,5 +13,17 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
 
+  private authService = inject(AuthService);
+
+  public menuItems = routes
+  .map((route) => route.children ?? [])
+  .flat()
+  .filter((route) => route && route.path)
+  .filter((route) => !route.path?.includes(':'));
+
+    // Método para cerrar sesión
+    //logout(): void {
+     // this.authService.logout();
+   //ß }
 
 }

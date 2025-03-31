@@ -1,1 +1,29 @@
-<p>complete-tasks works!</p>
+<h1>Tareas Completadas</h1>
+
+
+<div *ngIf="tasks.length > 0; else noTasks">
+  <table  class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let task of tasks; let i  = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td> {{ task.titulo }} </td>
+        <td> {{ task.descripcion }} </td>
+        <td> {{ task.completada ? 'Completada' : 'Pendiente'}} </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+<ng-template #noTasks>
+  <p>No hay tareas disponibles.</p>
+</ng-template>

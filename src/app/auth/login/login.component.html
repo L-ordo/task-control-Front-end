@@ -1,24 +1,36 @@
-<div class="">
-  <form (ngSubmit)="login()">
-    <div>
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email"
-    [(ngModel)] = "correo"
-    required>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card p-4 shadow" style="width: 350px;">
+    <h3 class="text-center mb-4">Iniciar Sesión</h3>
+    <form (ngSubmit)="login()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          [(ngModel)]="correo" 
+          class="form-control" 
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input 
+          type="password" 
+          name="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 mb-3">
+        Iniciar Sesión
+      </button>
+      <a 
+      href="/register"
+      class="text-center d-block mt-2 text-primary text-decoration-none">
+        ¿No tienes cuenta? Crear usuario
+      </a>
+    </form>
   </div>
-
-
-  <div>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password"
-    [(ngModel)]="password">
-  </div>
-
-  <button
-  type="submit"
-  >
-  Login
-</button>
-
-  </form>
 </div>

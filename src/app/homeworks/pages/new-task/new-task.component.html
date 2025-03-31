@@ -1,31 +1,46 @@
-<form (ngSubmit)="createTask()">
 
-  <div>
-    <label for="titulo">Nombre de la tarea</label>
-    <input
-    id="titulo"
-    type="text"
-    [(ngModel)]="titulo"
-    name = "titulo"
-    required
-    placeholder="Escriba el nombre de la tarea"
-    >
+<h1 class="mt-4 mb-4">Crear nueva tarea</h1>
+
+<div class="d-flex justify-content-center align-items-center">
+  <div class=" card p-5 shadow  mt-5" style="width:575px ;">
+
+    <form (ngSubmit)="createTask()">
+    
+      <div class="mb-3">
+        <label 
+        class="form-label"
+        for="titulo">Nombre de la tarea</label>
+        <input
+        class="form-control"
+        id="titulo"
+        type="text"
+        [(ngModel)]="titulo"
+        name = "titulo"
+        required
+        >
+      </div>
+    
+      <div>
+        <label  
+        class="form-label"
+        for="titulo">Descripcion de la tarea</label>
+        <input
+        class="form-control"
+        id="descripcion"
+        type="text"
+        [(ngModel)]="descripcion"
+        name = "descripcion"
+        required
+        >
+      </div>
+    
+      <button 
+      class="mt-3 mb-3 btn btn-primary w-100"
+      type="submit"
+      >Crear</button>
+    
+    </form>
+
   </div>
+</div>
 
-  <div>
-    <label for="titulo">Descripcion de la tarea</label>
-    <input
-    id="descripcion"
-    type="text"
-    [(ngModel)]="descripcion"
-    name = "descripcion"
-    required
-    placeholder="Escriba la descripcion de su tarea"
-    >
-  </div>
-
-  <button
-  type="submit"
-  >Crear</button>
-
-</form>
