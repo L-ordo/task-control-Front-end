@@ -21,9 +21,10 @@
         <td> {{ task.descripcion }} </td>
         <td> {{ task.completada ? 'Completada' : 'Pendiente'}} </td>
         <td>
-          <button class="btn btn-success btn-sm" >
+          <button class="btn btn-success btn-sm" (click)="activarFormularioEdicion(task)">
             Editar Tarea
           </button>
+          
         </td>
       </tr>
     </tbody>
@@ -31,6 +32,26 @@
   </table>
 
 </div>
+
+<div *ngIf="editandoTarea" class="card mt-4">
+  <div class="card-body">
+    <h5 class="card-title">Editar Tarea</h5>
+
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input id="titulo" type="text" [(ngModel)]="tituloEditado" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea id="descripcion" [(ngModel)]="descripcionEditada" class="form-control" rows="3"></textarea>
+    </div>
+
+    <button class="btn btn-primary me-2" (click)="guardarEdicion()">Guardar Cambios</button>
+    <button class="btn btn-secondary" (click)="cancelarEdicion()">Cancelar</button>
+  </div>
+</div>
+
 
 
 <ng-template #noTasks>

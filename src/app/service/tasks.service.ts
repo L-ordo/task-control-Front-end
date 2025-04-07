@@ -37,6 +37,16 @@ export class TasksService {
     return this.http.put(`${this.baseUrl}/${taskId}/completar`, { compleatda: true });
   }
 
+ 
+  updateTask(id: number, titulo: string, descripcion: string, completada: boolean) {
+    return this.http.put(`${this.baseUrl}/${id}`, {
+      titulo,
+      descripcion,
+      completada
+    });
+  }
+  
+
 
 
 }
